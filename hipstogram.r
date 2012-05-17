@@ -63,4 +63,5 @@ hipstogram <- function(x,
   system(paste('convert','.polar.png',options3,'.blur.png'))
   system(paste('convert','.histogram2.png', '.blur.png', options4, '.histogram3.png'))
   system(paste('convert','.histogram3.png', options4, filename))
+  system('rm .histogram[0-3].png .polar.png .blur.png')
 }
