@@ -53,9 +53,14 @@ hipstogram <- function(x,
     '-define compose:args=5x0+0+360',
     '-composite'
   )
+  options5 <- paste(
+    '-blur 0x4',
+    '-radial-blur 3'
+  )
   system(paste('convert','.histogram0.png',options0,'.histogram1.png'))
   system(paste('convert','.histogram1.png',options1,'.histogram2.png'))
   system(paste('convert',options2, '.polar.png'))
   system(paste('convert','.polar.png',options3,'.blur.png'))
-  system(paste('convert','.histogram2.png', '.blur.png', options4, filename))
+  system(paste('convert','.histogram2.png', '.blur.png', options4, '.histogram3.png'))
+  system(paste('convert','.histogram3.png', options4, filename))
 }
