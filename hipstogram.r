@@ -12,6 +12,6 @@ hipstogram <- function(x,
 
   # Pass through the Hipstomatic
   # https://github.com/paulasmuth/hipster_filters/blob/master/vintage_processor.rb
-  outputoptions <- '-compose over -gravity center -modulate 100,120 -brightness-contrast 0x20'
+  outputoptions <- '-compose over -gravity center -modulate 100,120 -brightness-contrast 0x20 -sepia-tone 80%'
   system(paste('convert','.histogram.png',outputoptions,filename))
 }
